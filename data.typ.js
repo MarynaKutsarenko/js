@@ -1,6 +1,6 @@
 ' use strict ';
 
-let maney =  prompt (" Ваш бюджет на месяц? " , "" ) ;
+let money =  prompt (" Ваш бюджет на месяц? " , "" ) ;
 
 let time = prompt(" Введите дату в формате YYYY - MM- DD ", "" );
 
@@ -11,7 +11,7 @@ let questionCost = prompt( "Во сколько обойдется?" , "" );
 
 
 let appData = {
-    budget: maney,         
+    budget: money,         
     timeDate: time,        
     expenses:  {
         answ1 : questionSpending,
@@ -20,7 +20,7 @@ let appData = {
 } ;  
  
 console.log(appData);
-alert(maney/ 30 );
+alert(money/ 30 );
 
 
 
