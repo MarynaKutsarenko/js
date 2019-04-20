@@ -8,8 +8,6 @@ let questionSpending = prompt( "Введите обязательную стат
 
 let questionCost = prompt( "Во сколько обойдется?" , "" );
 
-
-
 let appData = {
     budget: money,         
     timeDate: time,        
