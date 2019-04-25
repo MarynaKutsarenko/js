@@ -51,7 +51,7 @@ do {
     let questionSpending = prompt("Введите обязательную статью расходов" , ""),
         questionCost = prompt("Во сколько обойдется?" , "");
     
-    if ( (typeof(questionSpending))=== 'string' && (typeof(questionSpending)) != null && (typeof(questionCost)) != null 
+    if ((typeof(questionSpending))=== 'string' && (typeof(questionSpending)) != null && (typeof(questionCost)) != null 
         && questionSpending != '' && questionCost != '' && questionSpending.length < 50) {
         console.log("done");
         appData.expenses[questionSpending] = questionCost;
