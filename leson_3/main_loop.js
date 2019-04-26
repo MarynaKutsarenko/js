@@ -1,30 +1,31 @@
  'use strict';
 
-let money = newMoney,
-    time =
+let money = promptNumber ("Ваш бюджет на месяц?");
 
-function start() {
+let time = prompt("Введите дату в формате YYYY - MM- DD ", "");
 
-    let money = prompt("Ваш бюджет на месяц? " , "");
-        time = prompt("Введите дату в формате YYYY - MM- DD ", "");
-
-    while (money != '' && money == null) {
-
-    }else {
-        alert("Введите Ваш бюджет на месяц! " , "")
+function promptNumber(message) {
+    let text = '',
+        number = 0;
+    while (number<= 0) {
+        text = prompt(message, '');
+    if (isNaN(text) == false && text != ''){
+        number = parseInt("eeee");
+        text = ("")
     }
+ }
+    return number; 
 }
 
-start();  
+//promptNumber(); 
 
-function checkBudgetAmount(questionSpending,questionCost) {
-
-    while (typeof(questionSpending)) != null && (isNaN(questionSpending)) == true && questionSpending != ''
-            && (typeof(questionCost)) != null && questionCost != '' && questionSpending.length < 50;
-            break;
+/*function checkBudgetAmount(questionSpending, questionCost) {
+         questionSpending = promptNumber("Введите обязательную статью расходов в этом месяце", ''),
+         questionCost = promptNumber("Во сколько обойдется?", '') ;
+        return (questionSpending,questionCost );
 }
-
-checkBudgetAmount();
+*/
+//checkBudgetAmount();
 
 let appData = {
     budget: money,         
@@ -35,23 +36,29 @@ let appData = {
     savings: true
 };
 
+let questionSpending = (''), 
+    questionCost = (''); 
 
-for (let i = 0; i < 2; i++) {
-    let questionSpending = prompt("Введите обязательную статью расходов в этом месяце", ''),
-        questionCost = prompt("Во сколько обойдется?", '');
-        
-    if (checkBudgetAmount(questionSpending,questionCost)){
-            console.log("done");
-            appData.expenses[questionSpending] = questionCost;
-        } else {
-            alert("Статья расходов обязательна");
-            i--;
-        }
+function chooseExpenses(){
+    for (let i = 0; i < 2; i++) {
+            questionSpending = promptNumber("Введите обязательную статью расходов в этом месяце", ''),
+            questionCost = promptNumber("Во сколько обойдется?", '');
+            
+        if (promptNumber()){
+                console.log("done");
+                appData.expenses[questionSpending] = questionCost;
+            } else {
+                alert("Статья расходов обязательна");
+                i--;
+            }
+        return chooseExpenses;
+    }
 }
+chooseExpenses();
 
-function name(params) {
-    
-}
+appData.moneyPerDay = appData.budget / 30;
+
+function detectLevel() {
     if (appDate.moneyPerDay < 100) {
         console.log("Минимальный уровень дохода");
     }else if(appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
@@ -61,38 +68,18 @@ function name(params) {
     }else{
         console.log("Произошла ошибка");
     }
-
-appData.moneyPerDay = appData.budget / 30;
-
-alert("Ежедневный доход" + appData.moneyPerDay);
+}
+detectLevel();
 
 function checkSavings() {
     if (appData.savings == true) {
-        let seve = prompt("Какова сумма накоплений?");
-            percent = prompt("Под какой процент?");
+        let seve = +prompt("Какова сумма накоплений?"),
+            percent = +prompt("Под какой процент?");
 
-        appData.monthIncome = save/100/12 * percent;
-        alert("Доход в месяц:" + appData.monthIncome)
+        appData.monthIncome = save/100/12*percent;
+        alert("Доход в месяц: " + appData.monthIncome);
     }
 }
-
 checkSavings();
 
-/*
-function retVar() {
-    let num = 50;
-    return num;
-}
- let anotherNum = retVar();
- console.log(anotherNum);
 
-let str = "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext";
-console.log(str.length);
-if (str>50);
-console.log(str.toLocaleUpperCase());
-console.log(str.toLocaleLowerCase());
-
-let twelwe = "12.24566";
-
-console.log(parseInt(twelwe));
-console.log(parseFloat(twelwe));*/
