@@ -74,9 +74,7 @@ let appData = {
             appData.income = items.split(',');
             appData.income.push(prompt('Может что то еще?'));
                 appData.income.forEach(function(item,i){
-                     if (i > 0){
-                        alert("Способ дополнительного зароботка: " + item);
-                    }
+                     alert("Способ дополнительного зароботка: " + (i+1) +')' + item);
                 });
 
     }
